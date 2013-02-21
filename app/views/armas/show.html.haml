@@ -1,0 +1,32 @@
+.notice 
+  = notice 
+
+
+%p
+  %b Modelo
+  %br
+  = @arma.modelo
+
+
+%p
+  %b Fabricante
+  %br
+  = @arma.marca
+
+%p
+  %b Especificação
+  %br
+  = @arma.descricao.html_safe
+
+%p
+  %b Histórioco 
+  %br
+  =@arma.historico
+  %br
+  %br
+  = raw @arma.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+
+
+
+
+= link_to 'Voltar', armas_path

@@ -1,0 +1,30 @@
+%h1 Armas
+#tag_cloud
+  - tag_cloud Arma.tag_counts, %w[s m l] do |tag, css_class|
+    = link_to tag.name, tag_path(tag.name), class: css_class
+%div
+  - @armas.each do |arma|
+    %div
+      %br/
+      %p/
+      %h1
+        %b= link_to arma.modelo, arma
+      %div
+        %div
+          %p
+            %b Fabricante
+          = arma.marca
+        %div
+          %p
+            %b Especificações
+          = arma.descricao
+        %div
+          %p
+            %b Histórico
+          = truncate(arma.historico,:length => 487)
+          = link_to 'Read More', arma
+          %div
+            %br/
+            = raw arma.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+        %div= link_to 'Mostrar', arma
+%br/

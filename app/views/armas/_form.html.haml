@@ -1,0 +1,9 @@
+= semantic_form_for @arma do |f|
+  = f.inputs do
+    = f.input :modelo
+    = f.input :marca, :label => "Fabricante"
+    = f.input :descricao, :label => "Especificações", input_html: {class: "ckeditor"}
+    = f.input :historico, :label => "Histórico"
+    = f.input :tag_list, :label => "Relacionados"
+    %br
+  = f.button
