@@ -13,11 +13,6 @@ class ArmasController < ApplicationController
   # GET /armas/1.json
   def show
     @arma = Arma.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @arma }
-    end
   end
 
   # GET /armas/new

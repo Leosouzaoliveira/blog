@@ -1,2 +1,3 @@
 object @arma
-attributes :modelo
+
+attributes :modelo, :descricao
