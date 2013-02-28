@@ -21,12 +21,12 @@
 %p
   %b Histórioco 
   %br
-  =@arma.historico
+  =@arma.historico.html_safe
   %br
   %br
   = raw @arma.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
 
 
 
-
+= link_to 'edit', edit_arma_path(@arma)
 = link_to 'Voltar', armas_path

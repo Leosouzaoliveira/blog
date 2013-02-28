@@ -13,6 +13,7 @@ class ArmasController < ApplicationController
   # GET /armas/1.json
   def show
     @arma = Arma.find(params[:id])
+
   end
 
   # GET /armas/new

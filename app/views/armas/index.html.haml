@@ -1,4 +1,4 @@
-%h1 Armas
+%h1= t ".title"
 #tag_cloud
   - tag_cloud Arma.tag_counts, %w[s m l] do |tag, css_class|
     = link_to tag.name, tag_path(tag.name), class: css_class
@@ -17,11 +17,11 @@
         %div
           %p
             %b Especificações
-          = arma.descricao
+          = arma.descricao.html_safe
         %div
           %p
             %b Histórico
-          = truncate(arma.historico,:length => 487)
+          = truncate(arma.historico,:length => 487).html_safe
           = link_to 'Read More', arma
           %div
             %br/

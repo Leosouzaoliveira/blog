@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221144056) do
+ActiveRecord::Schema.define(:version => 20130228141239) do
+
+  create_table "arma_translations", :force => true do |t|
+    t.integer  "arma_id"
+    t.string   "locale"
+    t.text     "descricao"
+    t.text     "historico"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "arma_translations", ["arma_id"], :name => "index_arma_translations_on_arma_id"
+  add_index "arma_translations", ["locale"], :name => "index_arma_translations_on_locale"
 
   create_table "armas", :force => true do |t|
     t.string   "marca"
